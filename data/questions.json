@@ -1,0 +1,254 @@
+[
+  {
+    "chapter": 1,
+    "title": "บทที่ 1 – แบบจำลอง OSI และ TCP/IP (ข้อ 1 - 10)",
+    "questions": [
+      {
+        "id": "1",
+        "question": "แบบจำลองของอินเทอร์เน็ต (TCP/IP protocol suite) แบ่งการทำงานออกเป็นกี่เลเยอร์",
+        "choices": [
+          "4 เลเยอร์",
+          "5 เลเยอร์",
+          "6 เลเยอร์",
+          "7 เลเยอร์"
+        ],
+        "answer": 1,
+        "explanation": "แบบจำลอง TCP/IP แบ่งออกเป็น 5 เลเยอร์ ได้แก่ Physical, Data link, Network, Transport และ Application"
+      },
+      {
+        "id": "2",
+        "question": "แบบจำลอง OSI แบ่งการทำงานออกเป็นกี่เลเยอร์",
+        "choices": [
+          "4 เลเยอร์",
+          "5 เลเยอร์",
+          "6 เลเยอร์",
+          "7 เลเยอร์"
+        ],
+        "answer": 3,
+        "explanation": "แบบจำลอง OSI แบ่งออกเป็น 7 เลเยอร์ ได้แก่ Physical, Data link, Network, Transport, Session, Presentation และ Application"
+      },
+      {
+        "id": "3",
+        "question": "แบบจำลอง OSI (Open Systems Interconnection) ถูกพัฒนาขึ้นโดยองค์กรใด",
+        "choices": [
+          "IEEE",
+          "ITU-T",
+          "ISO",
+          "ANSI"
+        ],
+        "answer": 2,
+        "explanation": "OSI พัฒนาโดยองค์กร ISO (International Organization for Standardization)"
+      },
+      {
+        "id": "4",
+        "question": "เลเยอร์ใดบ้างที่มีในแบบจำลอง OSI แต่ไม่มีในแบบจำลองของอินเทอร์เน็ต",
+        "choices": [
+          "Session และ Presentation",
+          "Network และ Transport",
+          "Data link และ Physical",
+          "Application และ Session"
+        ],
+        "answer": 0,
+        "explanation": "Session และ Presentation layer มีใน OSI แต่ใน TCP/IP รวมเข้ากับ Application layer"
+      },
+      {
+        "id": "5",
+        "question": "ที่เครื่องต้นทาง ข้อมูลจะเคลื่อนผ่านเลเยอร์ต่าง ๆ ในลักษณะใด",
+        "choices": [
+          "จากเลเยอร์ล่างสุดขึ้นไปเลเยอร์บนสุด",
+          "จากเลเยอร์บนสุดลงมาเลเยอร์ล่างสุด",
+          "ส่งตรงจากเลเยอร์ 5 ไปยังสื่อโดยไม่ผ่านเลเยอร์อื่น",
+          "เริ่มจากเลเยอร์ 3 แล้วกระจายขึ้นและลง"
+        ],
+        "answer": 1,
+        "explanation": "ที่เครื่องต้นทาง ข้อมูลจะส่งจากเลเยอร์บนสุด (Application) ลงมายังเลเยอร์ล่างสุด (Physical) เพื่อแปลงเป็นสัญญาณส่งออกไป"
+      },
+      {
+        "id": "6",
+        "question": "เพียร์ทูเพียร์โพรเซส (Peer-to-Peer Process) หมายถึงข้อใด",
+        "choices": [
+          "การที่เลเยอร์ต่างกันในเครื่องเดียวกันติดต่อกันโดยตรง",
+          "การที่เลเยอร์เดียวกันของสองเครื่องติดต่อกันโดยใช้โพรโตคอลเดียวกัน",
+          "การส่งข้อมูลระหว่างโหนดที่อยู่ติดกันเท่านั้น",
+          "การเชื่อมต่อคอมพิวเตอร์โดยไม่ต้องมีเซิร์ฟเวอร์"
+        ],
+        "answer": 1,
+        "explanation": "Peer-to-Peer Process คือการที่เลเยอร์ระดับเดียวกันของสองเครื่องสื่อสารกันผ่านโพรโตคอลของเลเยอร์นั้น"
+      },
+      {
+        "id": "7",
+        "question": "ข้อใดกล่าวถึงอินเทอร์เฟซ (Interface) ระหว่างเลเยอร์ได้ถูกต้อง",
+        "choices": [
+          "หากเปลี่ยนการทำงานภายในเลเยอร์ใด ต้องแก้ไขทุกเลเยอร์ตามไปด้วย",
+          "อินเทอร์เฟซใช้เชื่อมต่อระหว่างเครื่องต้นทางกับปลายทางโดยตรง",
+          "ถ้าอินเทอร์เฟซไม่เปลี่ยน การแก้ไขการทำงานภายในเลเยอร์หนึ่งจะไม่กระทบเลเยอร์อื่น",
+          "อินเทอร์เฟซมีเฉพาะในฟิสิคัลเลเยอร์"
+        ],
+        "answer": 2,
+        "explanation": "อินเทอร์เฟซกำหนดบริการและข้อมูลที่ส่งต่อระหว่างเลเยอร์ หากอินเทอร์เฟซไม่เปลี่ยน การแก้ไขการทำงานภายในเลเยอร์จะไม่กระทบเลเยอร์อื่น"
+      },
+      {
+        "id": "8",
+        "question": "เลเยอร์ใดเพิ่มทั้งเฮดเดอร์ (Header) และเทรเลอร์ (Trailer) ให้กับข้อมูล",
+        "choices": [
+          "Application layer",
+          "Transport layer",
+          "Network layer",
+          "Data link layer"
+        ],
+        "answer": 3,
+        "explanation": "Data link layer จะใส่ทั้ง Header (ฟิสิคัลแอดเดรส ฯลฯ) และ Trailer (FCS ตรวจจับข้อผิดพลาด) สร้างเป็น Frame"
+      },
+      {
+        "id": "9",
+        "question": "การกำหนดคุณสมบัติทางกลและทางไฟฟ้า การแปลงบิต 0 และ 1 เป็นสัญญาณ และการกำหนดอัตราการส่งข้อมูล เป็นหน้าที่ของเลเยอร์ใด",
+        "choices": [
+          "Physical layer",
+          "Data link layer",
+          "Network layer",
+          "Transport layer"
+        ],
+        "answer": 0,
+        "explanation": "Physical layer ทำหน้าที่จัดการระดับสัญญาณ สายสัญญาณ ขั้วต่อ และแปลงบิตเป็นสัญญาณทางกายภาพ"
+      },
+      {
+        "id": "10",
+        "question": "การหาเส้นทาง (Routing) เพื่อส่งข้อมูลข้ามเครือข่ายไปยังปลายทาง เป็นหน้าที่ของเลเยอร์ใด",
+        "choices": [
+          "Data link layer",
+          "Network layer",
+          "Transport layer",
+          "Application layer"
+        ],
+        "answer": 1,
+        "explanation": "Network layer (เช่น IP) รับผิดชอบการหาเส้นทาง (Routing) และการกำหนด Logical address เพื่อส่งข้อมูลข้ามเครือข่าย"
+      }
+    ]
+  },
+  {
+    "chapter": 2,
+    "title": "บทที่ 2 – หน้าที่และการทำงานของเลเยอร์ (ข้อ 11 - 20)",
+    "questions": [
+      {
+        "id": "11",
+        "question": "หน่วยข้อมูลที่ทรานสปอร์ตเลเยอร์แบ่งและใส่หมายเลขกำกับ (Sequence number) เรียกว่าอะไร",
+        "choices": [
+          "เฟรม (Frame)",
+          "แพ็กเก็ต (Packet)",
+          "เซ็กเมนต์ (Segment)",
+          "บิต (Bit)"
+        ],
+        "answer": 2,
+        "explanation": "Transport layer จะแบ่งข้อมูลออกเป็น เซ็กเมนต์ (Segment) และใส่ Sequence number กำกับ"
+      },
+      {
+        "id": "12",
+        "question": "ฟิสิคัลแอดเดรส (Physical address) ถูกเพิ่มเข้าไปในเฮดเดอร์ที่เลเยอร์ใด",
+        "choices": [
+          "Physical layer",
+          "Data link layer",
+          "Network layer",
+          "Transport layer"
+        ],
+        "answer": 1,
+        "explanation": "Physical address (เช่น MAC address) จะถูกเพิ่มเข้าไปในเฮดเดอร์ที่ Data link layer"
+      },
+      {
+        "id": "13",
+        "question": "การส่งข้อมูลแบบ hop-to-hop (node-to-node delivery) เป็นความรับผิดชอบของเลเยอร์ใด",
+        "choices": [
+          "Data link layer",
+          "Network layer",
+          "Transport layer",
+          "Application layer"
+        ],
+        "answer": 0,
+        "explanation": "Data link layer รับผิดชอบการส่งข้อมูลแบบ hop-to-hop หรือ node-to-node ระหว่างอุปกรณ์ที่เชื่อมต่อกันโดยตรง"
+      },
+      {
+        "id": "14",
+        "question": "การส่งข้อมูลจากต้นทางถึงปลายทาง (source-to-destination หรือ end-to-end delivery) ซึ่งอาจข้ามหลายเครือข่าย เป็นความรับผิดชอบของเลเยอร์ใด",
+        "choices": [
+          "Physical layer",
+          "Data link layer",
+          "Network layer",
+          "Session layer"
+        ],
+        "answer": 2,
+        "explanation": "Network layer รับผิดชอบการส่งข้อมูลจากเครื่องต้นทางไปยังเครื่องปลายทาง (source-to-destination)"
+      },
+      {
+        "id": "15",
+        "question": "เมื่อส่งข้อมูลข้ามเครือข่ายผ่านเราเตอร์ (Router) ข้อใดกล่าวถูกต้อง",
+        "choices": [
+          "ลอจิคัลแอดเดรสและฟิสิคัลแอดเดรสคงเดิมตลอดเส้นทาง",
+          "ลอจิคัลแอดเดรสเปลี่ยนไป แต่ฟิสิคัลแอดเดรสคงเดิม",
+          "ทั้งลอจิคัลแอดเดรสและฟิสิคัลแอดเดรสเปลี่ยนทุกครั้ง",
+          "ลอจิคัลแอดเดรสคงเดิม แต่ฟิสิคัลแอดเดรสเปลี่ยนไปในแต่ละช่วง"
+        ],
+        "answer": 3,
+        "explanation": "Logical address (IP address) ของต้นทาง/ปลายทางจะคงเดิม แต่ Physical address (MAC address) จะเปลี่ยนไปตามแต่ละ Hop (ช่วงเครือข่าย)"
+      },
+      {
+        "id": "16",
+        "question": "พอร์ตแอดเดรส (Port address) ในทรานสปอร์ตเลเยอร์ใช้ระบุสิ่งใด",
+        "choices": [
+          "เครื่องคอมพิวเตอร์ปลายทางในเครือข่าย",
+          "โพรเซส (Process) ที่รับหรือส่งข้อมูลภายในเครื่อง",
+          "การ์ดเครือข่ายของอุปกรณ์",
+          "เส้นทางที่ข้อมูลเดินทาง"
+        ],
+        "answer": 1,
+        "explanation": "Port address ใน Transport layer ใช้ระบุ Process หรือแอปพลิเคชันที่ทำงานอยู่ภายในเครื่อง"
+      },
+      {
+        "id": "17",
+        "question": "หมายเลขกำกับ (Sequence number) ของเซ็กเมนต์มีประโยชน์อย่างไร",
+        "choices": [
+          "ใช้รวมเซ็กเมนต์ที่ได้รับให้กลับเป็นข้อมูลเดิมตามลำดับ",
+          "ใช้กำหนดเส้นทางของแพ็กเก็ต",
+          "ใช้แปลงบิตเป็นสัญญาณไฟฟ้า",
+          "ใช้ระบุแอดเดรสของการ์ดเครือข่าย"
+        ],
+        "answer": 0,
+        "explanation": "Sequence number ใช้ในการจัดเรียงเซ็กเมนต์ให้กลับมาเรียงต่อกันเป็นข้อมูลที่ถูกต้องตามลำดับเดิมเมื่อถึงปลายทาง"
+      },
+      {
+        "id": "18",
+        "question": "การติดต่อระหว่างโพรเซสแบบใดที่ต้องสร้างการเชื่อมต่อกันก่อน จึงจะรับส่งข้อมูลได้",
+        "choices": [
+          "Connectionless",
+          "Hop-to-hop",
+          "Connection-oriented",
+          "Multipoint"
+        ],
+        "answer": 2,
+        "explanation": "Connection-oriented (เช่น TCP) ต้องสร้างการเชื่อมต่อ (Handshake) ก่อนจึงจะเริ่มรับส่งข้อมูล"
+      },
+      {
+        "id": "19",
+        "question": "การเข้ารหัส การถอดรหัส และการบีบอัดข้อมูล ในแบบจำลอง OSI เป็นหน้าที่ของเลเยอร์ใด",
+        "choices": [
+          "Session layer",
+          "Presentation layer",
+          "Transport layer",
+          "Data link layer"
+        ],
+        "answer": 1,
+        "explanation": "Presentation layer รับผิดชอบการแปลรูปแบบข้อมูล การเข้ารหัส/ถอดรหัส (Encryption) และการบีบอัดข้อมูล (Compression)"
+      },
+      {
+        "id": "20",
+        "question": "เลเยอร์ใดทำหน้าที่เชื่อมโยงระหว่างกลุ่มเลเยอร์ที่สนับสนุนการทำงานของเครือข่าย (network support layers) กับเลเยอร์ที่สนับสนุนผู้ใช้ (user support layer)",
+        "choices": [
+          "Physical layer",
+          "Network layer",
+          "Application layer",
+          "Transport layer"
+        ],
+        "answer": 3,
+        "explanation": "Transport layer ทำหน้าที่เป็นตัวกลางเชื่อมระหว่างเลเยอร์ล่าง (1-3 Network support) กับเลเยอร์บน (5-7 User support)"
+      }
+    ]
+  }
+]
