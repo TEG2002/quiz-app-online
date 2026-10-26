@@ -1,17 +1,11 @@
-import { readFile } from "fs/promises";
-import path from "path";
+import questionsData from "@/data/questions.json";
 
 export const dynamic = "force-dynamic";
 
-// อ่านจาก data/questions.json — รวมทุกข้อและซ่อนเฉลย
+// รวมทุกข้อและซ่อนเฉลย
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), "data", "questions.json");
-    const raw = await readFile(filePath, "utf-8");
-    const chapters = JSON.parse(raw.replace(/^\uFEFF/, ""));
-
-    // รวมคำถามทั้งหมดจากทุกบท
-    const questions = chapters.flatMap((c) =>
+    const questions = questionsData.flatMap((c) =>
       c.questions.map(({ id, question, choices }) => ({ id, question, choices }))
     );
 
@@ -21,3 +15,4 @@ export async function GET() {
     return Response.json({ error: "โหลดข้อสอบไม่สำเร็จ" }, { status: 500 });
   }
 }
+

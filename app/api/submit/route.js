@@ -1,5 +1,4 @@
-import { readFile } from "fs/promises";
-import path from "path";
+import questionsData from "@/data/questions.json";
 import { saveResult } from "@/lib/sheets";
 
 export const dynamic = "force-dynamic";
@@ -8,13 +7,8 @@ export async function POST(req) {
   try {
     const { studentId, name, answers } = await req.json();
 
-    // อ่านเฉลยจาก JSON
-    const filePath = path.join(process.cwd(), "data", "questions.json");
-    const raw = await readFile(filePath, "utf-8");
-    const chapters = JSON.parse(raw.replace(/^\uFEFF/, ""));
-
     // รวมคำถามและเฉลยทั้งหมด
-    const qs = chapters.flatMap((c) => c.questions);
+    const qs = questionsData.flatMap((c) => c.questions);
 
     const review = qs.map((q) => ({
       id: q.id,
