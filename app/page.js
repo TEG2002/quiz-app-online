@@ -5,6 +5,7 @@ const LABELS = ["ก", "ข", "ค", "ง"];
 
 export default function Page() {
   const [stage, setStage] = useState("start"); // start | quiz | result
+  const [studentId, setStudentId] = useState("");
   const [name, setName] = useState("");
   const [qs, setQs] = useState([]);
   const [i, setI] = useState(0);
@@ -31,7 +32,7 @@ export default function Page() {
       const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, answers }),
+        body: JSON.stringify({ studentId: studentId.trim(), name: name.trim(), answers }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
@@ -45,16 +46,23 @@ export default function Page() {
     return (
       <main>
         <h1>แบบทดสอบออนไลน์</h1>
-        <p className="sub">กรอกชื่อ แล้วตอบทีละข้อ (ทั้งหมด {qs.length || 20} ข้อ)</p>
+        <p className="sub">กรอกรหัสนักศึกษาและชื่อ-นามสกุล เพื่อเริ่มทำข้อสอบ (ทั้งหมด {qs.length || 20} ข้อ)</p>
+        <input
+          id="student-id-input"
+          type="text"
+          placeholder="รหัสนักศึกษา"
+          value={studentId}
+          onChange={(e) => setStudentId(e.target.value)}
+        />
         <input
           id="name-input"
           type="text"
           placeholder="ชื่อ-นามสกุล"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && name.trim() && !busy && start()}
+          onKeyDown={(e) => e.key === "Enter" && studentId.trim() && name.trim() && !busy && start()}
         />
-        <button id="btn-start" onClick={start} disabled={!name.trim() || busy}>
+        <button id="btn-start" onClick={start} disabled={!studentId.trim() || !name.trim() || busy}>
           {busy ? "กำลังโหลด…" : "เริ่มทำข้อสอบ"}
         </button>
         {error && <p className="err">{error}</p>}
@@ -93,7 +101,7 @@ export default function Page() {
   // ── หน้าผลลัพธ์ ───────────────────────────────────────────────
   return (
     <main>
-      <h1>ผลคะแนนของ {name}</h1>
+      <h1>ผลคะแนนของ {name} {studentId ? `(${studentId})` : ""}</h1>
       <div className="score">{result.score}/{result.total}</div>
       {qs.map((q, n) => {
         const r = result.review.find((x) => x.id === q.id);

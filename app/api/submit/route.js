@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req) {
   try {
-    const { name, answers } = await req.json();
+    const { studentId, name, answers } = await req.json();
 
     // อ่านเฉลยจาก JSON
     const filePath = path.join(process.cwd(), "data", "questions.json");
@@ -27,7 +27,12 @@ export async function POST(req) {
     // บันทึกคะแนนลง Google Sheet ถ้ามีการตั้งค่า SHEET_ID ไว้
     if (process.env.SHEET_ID) {
       try {
-        await saveResult(String(name || "ไม่ระบุชื่อ").slice(0, 80), score, qs.length);
+        await saveResult(
+          String(studentId || "").slice(0, 30),
+          String(name || "ไม่ระบุชื่อ").slice(0, 80),
+          score,
+          qs.length
+        );
       } catch (err) {
         console.error("บันทึกลง Google Sheets ไม่สำเร็จ:", err.message);
       }
