@@ -45,6 +45,9 @@ export default function Page() {
   if (stage === "start") {
     return (
       <main>
+        <div className="avatar-wrapper">
+          <img src="/instructor.png" alt="อาจารย์ผู้สอน" className="avatar-img" />
+        </div>
         <h1>แบบทดสอบออนไลน์</h1>
         <p className="sub">กรอกรหัสนักศึกษาและชื่อ-นามสกุล เพื่อเริ่มทำข้อสอบ (ทั้งหมด {qs.length || 20} ข้อ)</p>
         <input
